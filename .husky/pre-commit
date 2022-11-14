@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+set +e
+diff=$(git diff-index --cached HEAD | grep "yarn.lock")
+set -e
+if [ ! -z "$diff" ]; then
+  set +e
+  localhost=$(cat yarn.lock | grep "localhost")
+  set -e
+  if [ ! -z "$localhost" ]; then
+    echo "Detected localhost in yarn config!"
+    echo "Please revert yarn.lock and install when connected to a real registry."
+    exit 1
+  fi
+fi
