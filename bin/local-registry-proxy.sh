@@ -34,7 +34,7 @@ if [ "${use}" == "true" ]; then
   if [ "$?" != "0" ]; then
     echo ""
     echo "Could not reach http://localhost:4873/"
-    echo " Please ensure that you are running janus-local-dev-registry"
+    echo " Please ensure that you are running development-verdaccio"
     echo "  and have followed all instructions in the repo"
     exit 1
   fi

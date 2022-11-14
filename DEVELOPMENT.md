@@ -92,7 +92,7 @@ yarn prod-run <your file location in .ts>
 # Locally developing this repository AND another local library
 
 If you have the need to locally develop and test one library that is imported into another,
-you can make use of the (janus-develop-registry)[https://github.com/JanusHealthInc/janus-develop-registry].
+you can make use of the (develop-registry)[https://github.com/hanseltime/development-verdaccio].
 
 By pulling this repo and running the server start command, you can then switch to a local npm registry that
 will allow all @janushealth/ scoped packages to be published to the local registry.  It will also proxy all other packages from the npm registry.
