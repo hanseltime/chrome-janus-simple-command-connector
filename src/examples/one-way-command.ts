@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * This currently is not a working example since we do not have everything set up to
  * create to extensions as the moment.
@@ -8,14 +9,7 @@
  * apis where only one expects to send commands the other expects to receive them
  */
 
-import {
-  Client,
-  CommandMessage,
-  AsSuccess,
-  Server,
-  StatusMessage,
-  SuccessStatusMessage,
-} from '@hanseltime/janus-simple-command'
+import { Client, CommandMessage, Server, StatusMessage, SuccessStatusMessage } from '@hanseltime/janus-simple-command'
 import { ChromeMessageConnection } from '../ChromeMessageConnection'
 
 // Agreed upon messaging schemas as types
@@ -42,7 +36,7 @@ chrome.runtime.onConnectExternal.addListener(function (port) {
   if (port.sender?.id !== 'extensionBId') return
   const serverConnection = new ChromeMessageConnection(port, 'server')
 
-  const janusSimpleCommandServer = new Server<Commands, CommandMap, StatusMap>({
+  janusSimpleCommandServer = new Server<Commands, CommandMap, StatusMap>({
     maxSenderInactivity: 4000,
     maxAckRetries: 3,
     ackRetryDelay: 500,
