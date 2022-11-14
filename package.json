@@ -1,7 +1,7 @@
 {
-  "name": "@janushealth/test-TODO-your-package-name",
+  "name": "@hanseltime/chrome-janus-simple-command-connection",
   "version": "1.0.1",
-  "description": "TODO-fill-in-your-package-description",
+  "description": "Boiler plate for wrapping a Chrome extension port in a connection that can be used with janus-simple-command",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,7 +11,7 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "repository": "https://github.com/JanusHealthInc/typescript-repo-template.git",
+  "repository": "https://github.com/JanusHealthInc/chrome-janus-simple-command-connector.git",
   "author": "Justin Hanselman <hanseltime@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -37,6 +37,7 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.1",
+    "@types/chrome": "^0.0.200",
     "@types/jest": "^29.2.2",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
@@ -59,7 +60,10 @@
     "typescript": "^4.8.4"
   },
   "engines": {
-    "node": ">=19.0.0"
+    "node": ">=12.0.0"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@hanseltime/janus-simple-command": "^1.2.1"
+  }
 }
